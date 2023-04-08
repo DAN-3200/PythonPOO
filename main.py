@@ -8,6 +8,7 @@ Category = Modulo.Categoria
 Product = Modulo.Produto
 
 # -------------
+# Onde vai ser guardado as informações
 boxClass = []
 boxProd = []
 
@@ -62,6 +63,7 @@ while debounce:
   
     elif Target == '4':
       # Excluir Produto
+      
       LimparTela(0)
       print("Excluir Produto ----")
       Nome = str(input("  Nome: "))
@@ -72,7 +74,8 @@ while debounce:
       LimparTela(0)
 
       print("Exibir Produtos ----")
-      
+
+      # Printar os Produtos
       for i in boxProd:
         print(i)
      
@@ -80,8 +83,11 @@ while debounce:
       time.sleep(20)
         
     elif Target == '6':
+      # Editar o estoque do Produto
       LimparTela(0)
+      
       print("Estoque ----")
+       # Printar os Produtos
       for i, v in enumerate(boxProd):
         print(f"{i} -- {v.nome}")
 
@@ -89,12 +95,14 @@ while debounce:
       try:
         boxProd[index].estoque = int(input("  Estoque: "))
       except:
+        # caso não exista ainda o produto
         print("Não há correspondente")
         time.sleep(2)
         
     elif Target == '7':
       LimparTela(0)
-      print(7)
+      
+      # Retirar do Estoque
       print("Remover Estoque ----")
       for i, v in enumerate(boxProd):
         print(f"{i} -- {v.nome}")
@@ -131,10 +139,12 @@ while debounce:
       
   except:
     LimparTela(0)
+    # Não pode deixar o codigo 'cair'
     print("Houve um erro no código, portanto retornaremos ao Menu")
     time.sleep(2.5)
     
 else:
+    # Caso queira ver tudo no final
     print("Class: ", boxClass)
     print("Produtos: ", boxProd)
 
