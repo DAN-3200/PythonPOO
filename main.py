@@ -114,6 +114,7 @@ while debounce:
             boxProd[index].estoque -= retirada
         else:
           print("O Valor do estoque não pode ir abaixo de 0")
+          time.sleep(2.5)
           
       except:
         print("Não há correspondente")
